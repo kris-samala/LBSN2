@@ -2,6 +2,8 @@ import numpy as np
 import random
 import math
 from datetime import datetime
+from geopy import geocoders
+from googlemaps import GoogleMaps
 
 class Util:
 
@@ -40,3 +42,18 @@ class Util:
         days = timedelta.days
         fraction = timedelta.seconds / 86400.0
         return days+fraction
+
+    @staticmethod
+    def geocode(point):
+        g = geocoders.Google()
+
+        (new_place,new_point) = g.reverse(point)
+        print new_place
+        return new_place
+
+    @staticmethod
+    def googlemaps(latitude, longitude):
+        gmaps = GoogleMaps()
+        destination = gmaps.latlng_to_address(latitude, longitude)
+        print destination
+        return destination
