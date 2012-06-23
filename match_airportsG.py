@@ -23,8 +23,10 @@ def find_city(x, y):
 
     sorted_closest = sorted(closest, key=operator.itemgetter(1))
 
-    for city, pop in sorted_closest:
-        return city
+    for airport, dist in sorted_closest:
+        distances.append(dist)
+        return airport
+
     return None
 
 count = 0
