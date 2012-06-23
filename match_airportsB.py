@@ -33,9 +33,9 @@ count = 0
 for l in fileinput.input(sys.argv[1]):
     count +=1
     line = l.split("\t")
-    if len(line) < 5:
-        break
     userID = line[0].rstrip()
+    if line[2] == '':
+        continue
     latitude = float(line[2])
     longitude = float(line[3])
     locID = line[4].rstrip()

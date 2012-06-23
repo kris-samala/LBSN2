@@ -2,8 +2,8 @@ import numpy as np
 import random
 import math
 from datetime import datetime
-from geopy import geocoders
-from googlemaps import GoogleMaps
+#from geopy import geocoders
+#from googlemaps import GoogleMaps
 
 class Util:
 
