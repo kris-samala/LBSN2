@@ -7,7 +7,7 @@ class LocationGraph:
     def __init__(self):
         self.graph = nx.DiGraph()
 
-    def add_vertex(self, name):
+    def add_node(self, name):
         self.graph.add_node(name)
 
     def add_edge(self, node1, node2, w=1):
@@ -56,10 +56,9 @@ class LocationGraph:
 
         return total
 
-    def transition_matrix(self):
-        size = self.get_nodes_size()
+    def transition_matrix(self, nodes):
+        size = len(nodes)
         T = np.zeros(shape=(size,size))
-        nodes = self.nodes()
 
         for i in range(size):
             n1 = nodes[i]
